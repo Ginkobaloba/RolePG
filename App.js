@@ -11,21 +11,69 @@ $(document).ready(function() {
 				$("#message_help").clone().insertBefore("#placeholder").fadeIn(1000);
 			}
 		}
-var bar = new ProgressBar.Path('#player-path', {
-easing: 'easeInOut',
-duration: 1400
+var bar = new ProgressBar.SemiCircle(playercontainer, {
+ strokeWidth: 6,
+ color: '#FFEA82 ',
+ trailColor: '#eee',
+ trailWidth: 1,
+ easing: 'easeInOut',
+ duration: 1400,
+ svgStyle: null,
+ text: {
+   value: '',
+   alignToBottom: false
+ },
+ from: {color: '#FFEA82 '},
+ to: {color: '#ED6A5A '},
+ // Set default step function for all animate calls
+ step: (state, bar) => {
+   bar.path.setAttribute('stroke', state.color);
+   var value = Math.round(bar.value() * 100);
+   if (value === 0) {
+     bar.setText('Dead');
+   } else {
+     bar.setText("Player");
+   }
+
+   bar.text.style.color = state.color;
+ }
 });
+bar.text.style.fontFamily = '"Raleway", Helvetica, sans-serif';
+bar.text.style.fontSize = '2rem';
 
-bar.set(0);
-bar.animate(0);
+bar.animate(0);  // Number from 0.0 to 1.
 
-var bar = new ProgressBar.Path('#enemy-path', {
-easing: 'easeInOut',
-duration: 1400
+var bar = new ProgressBar.SemiCircle(enemycontainer, {
+ strokeWidth: 6,
+ color: '#FFEA82 ',
+ trailColor: '#eee',
+ trailWidth: 1,
+ easing: 'easeInOut',
+ duration: 1400,
+ svgStyle: null,
+ text: {
+   value: '',
+   alignToBottom: false
+ },
+ from: {color: '#FFEA82 '},
+ to: {color: '#ED6A5A '},
+ // Set default step function for all animate calls
+ step: (state, bar) => {
+   bar.path.setAttribute('stroke', state.color);
+   var value = Math.round(bar.value() * 100);
+   if (value === 0) {
+     bar.setText('Dead');
+   } else {
+     bar.setText("Enemy");
+   }
+
+   bar.text.style.color = state.color;
+ }
 });
+bar.text.style.fontFamily = '"Raleway", Helvetica, sans-serif';
+bar.text.style.fontSize = '2rem';
 
-bar.set(0);
-bar.animate(1.0);
+bar.animate(1.0);  // Number from 0.0 to 1.0 UPDATE NUMBERS
 
 function Dice(dice){
 	this.dice = dice;
