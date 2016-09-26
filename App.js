@@ -1,3 +1,32 @@
+$(document).ready(function() {
+	$("#message_begin").fadeIn(3000);
+	$("#area_main").fadeIn(3000);
+	$("#enemycontainer").fadeIn(3000);
+	$("#playercontainer").fadeIn(3000);
+	$("#command_line").fadeIn(3000);
+	$("form").submit(function() {
+		var input = $("#command_line").val();
+		if (input.indexOf("help") > -1) {
+			if (input == "help") {
+				$("#message_help").clone().insertBefore("#placeholder").fadeIn(1000);
+			}
+		}
+var bar = new ProgressBar.Path('#player-path', {
+easing: 'easeInOut',
+duration: 1400
+});
+
+bar.set(0);
+bar.animate(0);
+
+var bar = new ProgressBar.Path('#enemy-path', {
+easing: 'easeInOut',
+duration: 1400
+});
+
+bar.set(0);
+bar.animate(1.0);
+
 function Dice(dice){
 	this.dice = dice;
 }
@@ -101,3 +130,5 @@ function CPUAttack(){
 	else{return heavyAttack()};
 }
 
+$("#main_content").scrollTop($("#main_content")[0].scrollHeight);
+$("#command_line").val("");

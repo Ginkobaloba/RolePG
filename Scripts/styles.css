@@ -16,3 +16,47 @@
  float: right;
  height: 200px;
 }
+body {
+	background-color: black;	
+}
+
+#container {
+	color: white;
+	position: absolute;
+	top: 50%;
+	left: 50%;
+	margin-top: -200px;
+	margin-left: -400px;
+}
+
+#console {
+	background-color:black; 
+	height: 400px; 
+	width: 800px; 
+	margin: 0 auto;
+	overflow: auto;
+	color: white;
+}
+
+#console p {
+	color: white;
+	display: none;
+	font-size: 17px;
+	font-family: "Times New Roman", Times, serif;
+}
+
+#command_line {
+	display: none;
+}
+
+input {
+	background-color: black;
+	color: white;
+	border: 1px solid #333;
+	font-family: "Times New Roman", Times, serif;
+	font-size: 17px;
+}
+
+input:focus {
+	outline: none;
+}
