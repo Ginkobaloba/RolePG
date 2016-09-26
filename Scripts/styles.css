@@ -1,0 +1,18 @@
+#sidebar {
+    position:absolute;
+    top:0; bottom:0; left:0;
+    width:50px;
+    background:#d9d9d9;
+}
+#playercontainer {
+ margin: 20px;
+ width: 200px;
+ float: left;
+ height: 200px;
+}
+#enemycontainer {
+ margin: 20px;
+ width: 200px;
+ float: right;
+ height: 200px;
+}
