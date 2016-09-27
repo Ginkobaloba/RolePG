@@ -1,29 +1,10 @@
 $(document).ready(function() {
-	
+    
     $("#message_begin").fadeIn(3000);
     $("#area_main").fadeIn(3000);
     $("#enemycontainer").fadeIn(3000);
     $("#playercontainer").fadeIn(3000);
     $("#command_line").fadeIn(3000);
-	
-	var bar = new ProgressBar.Path('#playerheart-path', {
-	easing: 'easeInOut',
-  duration: 1400
-});
-
-bar.set(0);
-bar.animate(1.0);  // Number from 0.0 to 1.0
-
-var bar = new ProgressBar.Path('#enemyheart-path', {
-   easing: 'easeInOut',
-  duration: 1400
-});
-
-bar.set(0);
-bar.animate(1.0);  // Number from 0.0 to 1.0
-	
-	
-	
     $("form").submit(function() {
         var input = $("#command_line").val();
         if (input.indexOf("help") > -1) {
@@ -33,11 +14,17 @@ bar.animate(1.0);  // Number from 0.0 to 1.0
         }
         else if(input.indexOf("cowboy") > -1){
            if(input == "cowboy"){
-               $("#cowboy_choice").clone().insertBefore("#placeholder").fadeIn(1000);}
-}else if(input.indexOf("ninja") > -1){
+               $("#cowboy_choice").clone().insertBefore("#placeholder").fadeIn(1000)
+               $("#cowboy_weapon").clone().insertBefore("#placeholder").fadeIn(1000);}
+        }else if(input.indexOf("ninja") > -1){
            if(input == "ninja"){
-               $("#ninja_choice").clone().insertBefore("#placeholder").fadeIn(1000)}}
-else if (input != "") {
+               $("#ninja_choice").clone().insertBefore("#placeholder").fadeIn(1000)
+               $("#ninja_weapon").clone().insertBefore("#placeholder").fadeIn(1000)}
+        }else if(input.indexOf("alien") > -1){
+            if(input == "alien"){
+               $("#alien_choice").clone().insertBefore("#placeholder").fadeIn(1000)
+               $("#alien_weapon").clone().insertBefore("#placeholder").fadeIn(1000);}
+        }else if (input != "") {
             $('<p>I don\'t understand "' + input + '"</p>').insertBefore("#placeholder").fadeIn(1000);
         }
         $("#console").scrollTop($("#console")[0].scrollHeight);
@@ -46,10 +33,21 @@ $("#command_line").val("");
 });
 
 });
-bar.text.style.fontFamily = '"Raleway", Helvetica, sans-serif';
-bar.text.style.fontSize = '2rem';
+// 	var bar = new ProgressBar.Path('#playerheart-path', {
+// 	easing: 'easeInOut',
+//   duration: 3000
+// });
 
-bar.animate(1.0);  // Number from 0.0 to 1.0 UPDATE NUMBERS
+// bar.set(0);
+// bar.animate(.5);  // Number from 0.0 to 1.0
+
+// var bar = new ProgressBar.Path('#enemyheart-path', {
+//    easing: 'easeInOut',
+//   duration: 3000
+// });
+
+// bar.set(0);
+// bar.animate(1.0);  // Number from 0.0 to 1.0
 
 function Dice(dice){
     this.dice = dice;
@@ -153,3 +151,18 @@ function CPUAttack(){
     else if(hitDamage < 66){return normalAttack();}
     else{return heavyAttack()};
 }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
