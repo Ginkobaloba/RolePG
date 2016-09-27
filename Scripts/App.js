@@ -119,9 +119,6 @@ function playerAttack(input){
         if(input == "normalattack"){
             damage = normalAttack();
             if(damage != 0){
-				if (damage < 7){ 
-				damage = 7;
-				}
             $("<p>You've choosen a normal attack. You attack and hit your target for " + damage + " damage.</p>").insertBefore("#placeholder").fadeIn(1000);
         } else{
             missedAttack();
@@ -131,9 +128,7 @@ function playerAttack(input){
         if(input == "quickattack"){
             damage = quickAttack();
             if(damage != 0){
-			if (damage < 4){ 
-				damage = 4;
-				}
+
             $("<p>You've choosen a quick attack. You've attacked and hit your target for " + damage + " damage.</p>").insertBefore("#placeholder").fadeIn(1000);
         } else{
             missedAttack();
@@ -143,10 +138,7 @@ function playerAttack(input){
       if(input == "heavyattack"){
             damage = heavyAttack();
             if(damage != 0){	
-			if (damage < 12){ 
-				damage = 12;
-			}
-            $("<p>You went with the heavy attack. You hit the enemy and hit your target for " + damage + " and have caused some real damage.</p>").insertBefore("#placeholder").fadeIn(1000);
+       $("<p>You went with the heavy attack. You hit the enemy and hit your target for " + damage + " and have caused some real damage.</p>").insertBefore("#placeholder").fadeIn(1000);
         } else{
             missedAttack();
         }
@@ -215,18 +207,27 @@ function enemyMissedAttack(){
 }
 function quickAttack(){
     var hitDamage = Math.round(Math.random() * dice8.getRandomNumber());
+				if (hitDamage < 4){ 
+				hitDamage = 4;
+				}
     if(Math.random() <= .9){ return hitDamage;}
     return 0;
 }
 
 function normalAttack(){
     var hitDamage = Math.round(Math.random() * dice12.getRandomNumber());
+	if (hitDamage < 7){ 
+				hitDamage = 7;
+				}
     if(Math.random() <= .75){ return hitDamage;}
     return 0;
 }
 
 function heavyAttack(){
     var hitDamage = Math.round(Math.random() * dice20.getRandomNumber());
+	if (hitDamage < 12){ 
+				hitDamage = 12;
+				}
     if(Math.random() <= .55){return hitDamage;} 
     return 0;
 }
