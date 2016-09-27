@@ -23,16 +23,26 @@ $(document).ready(function() {
             }
         }
         else if(characterSelect == false && isInBattle == false){
-            
+            enemy.gold = goldAmount();
             selectCharacter(input);
             battle();
         }
+        else if(player1.health <= 0 || enemy.health <= 0){
+            if(player1.health > 0){
+                player1.gold = player1.gold + enemy.gold;
+                displayPlayerGold();
+                gainHealth();
+                isInBattle = false;
+            }else if(enemy.health > 0){
+                $("#dead").clone().insertBefore("#placeholder").fadeIn(1000);
+                finalGold();
+                isInBattle = false;
+            }
+        }
         else if(isInBattle = true){
             if(input != ""){
-
             playerAttack(input);
             }
-
         }
         else if (input != "") {
             $('<p>I don\'t understand "' + input + '"</p>').insertBefore("#placeholder").fadeIn(1000);
@@ -145,7 +155,10 @@ function printHealth(title, suffix){
 function printGold(title, suffix){
     console.log(title, this.gold, suffix)
 }
-
+function gainHealth(){
+    player1.health = player1.health + 50;
+    $("<p>You have gained 50 health for winning! <br>Your health is now: " + player1.getHealth() +  " </p>").insertBefore("#placeholder").fadeIn(1000);
+}
 Person.prototype.getHealth = function(){
     return this.health;
 }
@@ -158,7 +171,12 @@ function displayPlayerHealth(){
      $("<p>Your health is: " + player1.getHealth() + "<br>Enemy health is: " + enemy.getHealth() + " </p>").insertBefore("#placeholder").fadeIn(1000);
 
 }
-
+function displayPlayerGold(){
+     $("<p>The enemy had: " + enemy.getGold() + " Gold.<br>" + "Your Gold is now: " + player1.getGold() + " </p>").insertBefore("#placeholder").fadeIn(1000);    
+}
+function finalGold(){
+     $("<p>Your final Gold amount is : " + player1.getGold() + " </p>").insertBefore("#placeholder").fadeIn(1000);    
+}
 function checkAlive(){
     if(player1.getHealth > 0){
         return true;
@@ -174,24 +192,24 @@ function enemyMissedAttack(){
 }
 function quickAttack(){
     var hitDamage = Math.round(Math.random() * dice8.getRandomNumber());
-    if(Math.random() <= .7){ return hitDamage;}
+    if(Math.random() <= .9){ return hitDamage;}
     return 0;
 }
 
 function normalAttack(){
     var hitDamage = Math.round(Math.random() * dice12.getRandomNumber());
-    if(Math.random() <= .6){ return hitDamage;}
+    if(Math.random() <= .75){ return hitDamage;}
     return 0;
 }
 
 function heavyAttack(){
     var hitDamage = Math.round(Math.random() * dice20.getRandomNumber());
-    if(Math.random() <= .4){return hitDamage;} 
+    if(Math.random() <= .55){return hitDamage;} 
     return 0;
 }
 
 function goldAmount(){
-    return Math.round(Math.Random() * 100);
+    return Math.round(Math.random() * 100);
 }
 
 function loseHealth(playerHealth, hitDamage){
