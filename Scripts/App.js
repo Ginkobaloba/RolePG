@@ -41,7 +41,7 @@ $(document).ready(function() {
         }
         else if(isInBattle = true){
             if(input != ""){
-            playerAttack(input);
+            playerAttack();
             }
         }
         else if (input != "") {
@@ -50,6 +50,43 @@ $(document).ready(function() {
         $("#console").scrollTop($("#console")[0].scrollHeight);
 $("#command_line").val("");
 
+
+function playerAttack(){
+    var damage = 0;
+    input = input.toLowerCase().replace(/\s+/g, '')
+    if(input.indexOf("normalattack") > -1){
+        if(input == "normalattack"){
+            damage = normalAttack();
+            if(damage != 0){
+            $("<p>You've choosen a normal attack. You attack and hit your target for " + damage + " damage.</p>").insertBefore("#placeholder").fadeIn(1000);
+        } else{
+            missedAttack();
+        }
+    }
+    } else if(input.indexOf("quickattack") > -1){
+        if(input == "quickattack"){
+            damage = quickAttack();
+            if(damage != 0){
+
+            $("<p>You've choosen a quick attack. You've attacked and hit your target for " + damage + " damage.</p>").insertBefore("#placeholder").fadeIn(1000);
+        } else{
+            missedAttack();
+        }
+    }
+    } else if(input.indexOf("heavyattack") > -1){
+      if(input == "heavyattack"){
+            damage = heavyAttack();
+            if(damage != 0){	
+       $("<p>You went with the heavy attack. You hit the enemy and hit your target for " + damage + " and have caused some real damage.</p>").insertBefore("#placeholder").fadeIn(1000);
+        } else{
+            missedAttack();
+        }
+    }
+    }
+    loseHealth(enemy, damage);
+    CPUAttack();
+    displayPlayerHealth();
+}
 });
 
 });
@@ -112,42 +149,7 @@ function newBattle(){
     $("#new_fight").clone().insertBefore("#placeholder").fadeIn(1000);
     isInBattle = true;
 }
-function playerAttack(input){
-    var damage = 0;
-    input = input.toLowerCase().replace(/\s+/g, '')
-    if(input.indexOf("normalattack") > -1){
-        if(input == "normalattack"){
-            damage = normalAttack();
-            if(damage != 0){
-            $("<p>You've choosen a normal attack. You attack and hit your target for " + damage + " damage.</p>").insertBefore("#placeholder").fadeIn(1000);
-        } else{
-            missedAttack();
-        }
-    }
-    } else if(input.indexOf("quickattack") > -1){
-        if(input == "quickattack"){
-            damage = quickAttack();
-            if(damage != 0){
 
-            $("<p>You've choosen a quick attack. You've attacked and hit your target for " + damage + " damage.</p>").insertBefore("#placeholder").fadeIn(1000);
-        } else{
-            missedAttack();
-        }
-    }
-    } else if(input.indexOf("heavyattack") > -1){
-      if(input == "heavyattack"){
-            damage = heavyAttack();
-            if(damage != 0){	
-       $("<p>You went with the heavy attack. You hit the enemy and hit your target for " + damage + " and have caused some real damage.</p>").insertBefore("#placeholder").fadeIn(1000);
-        } else{
-            missedAttack();
-        }
-    }
-    }
-    loseHealth(enemy, damage);
-    CPUAttack();
-    displayPlayerHealth();
-}
 
 function Dice(dice){
     this.dice = dice;
