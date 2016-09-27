@@ -33,7 +33,11 @@ body {
     display: none;
     font-size: 17px;
 }
-
+#console h3 {
+    color: #9c9c9c;
+    display: none;
+    font-size: 17px;
+}
 
 /* === Form === */
 input {
