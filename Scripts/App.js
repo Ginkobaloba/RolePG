@@ -119,6 +119,9 @@ function playerAttack(input){
         if(input == "normalattack"){
             damage = normalAttack();
             if(damage != 0){
+				if (damage < 7){ 
+				damage = 7;
+				}
             $("<p>You've choosen a normal attack. You attack and hit your target for " + damage + " damage.</p>").insertBefore("#placeholder").fadeIn(1000);
         } else{
             missedAttack();
@@ -128,6 +131,9 @@ function playerAttack(input){
         if(input == "quickattack"){
             damage = quickAttack();
             if(damage != 0){
+			if (damage < 4){ 
+				damage = 4;
+				}
             $("<p>You've choosen a quick attack. You've attacked and hit your target for " + damage + " damage.</p>").insertBefore("#placeholder").fadeIn(1000);
         } else{
             missedAttack();
@@ -136,7 +142,10 @@ function playerAttack(input){
     } else if(input.indexOf("heavyattack") > -1){
       if(input == "heavyattack"){
             damage = heavyAttack();
-            if(damage != 0){
+            if(damage != 0){	
+			if (damage < 12){ 
+				damage = 12;
+			}
             $("<p>You went with the heavy attack. You hit the enemy and hit your target for " + damage + " and have caused some real damage.</p>").insertBefore("#placeholder").fadeIn(1000);
         } else{
             missedAttack();
