@@ -105,7 +105,7 @@ function endOfBattle(){
     gainHealth();
     isInBattle = false;
     enemy.health = 100;
-    $("Press 'Enter' to start new battle.").insertBefore("#placeholder").fadeIn(1000);
+    $("<p>Press 'Enter' to start new battle.</p>").insertBefore("#placeholder").fadeIn(1000);
 }
 function newBattle(){
     $("#time_to_fight").clone().insertBefore("#placeholder").fadeIn(1000);
