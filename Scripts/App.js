@@ -1,9 +1,3 @@
-var dice4 = new Dice(4);
-var dice6 = new Dice(6);
-var dice8 = new Dice(8);
-var dice10 = new Dice(10);
-var dice12 = new Dice(12);
-var dice20 = new Dice(20);
 var characterSelect = false;
 var isInBattle = false;
 var player1 = new Person();
@@ -36,6 +30,7 @@ $(document).ready(function() {
             }
             else if(player1.health > 0){
                 endOfBattle();
+				playAgain();
             }else if(enemy.health > 0){
                 $("#dead").clone().insertBefore("#placeholder").fadeIn(1000);
                 finalGold();
@@ -216,6 +211,7 @@ function enemyMissedAttack(){
     $("<p>Enemy missed their attack!</p>").insertBefore("#placeholder").fadeIn(1000);
 }
 function quickAttack(){
+	var dice8 = new Dice(8);
     var hitDamage = Math.round(Math.random() * dice8.getRandomNumber());
 				if (hitDamage < 4){ 
 				hitDamage = 4;
@@ -225,6 +221,7 @@ function quickAttack(){
 }
 
 function normalAttack(){
+	var dice12 = new Dice(12);
     var hitDamage = Math.round(Math.random() * dice12.getRandomNumber());
 	if (hitDamage < 7){ 
 				hitDamage = 7;
@@ -234,6 +231,7 @@ function normalAttack(){
 }
 
 function heavyAttack(){
+	var dice20 = new Dice(20);
     var hitDamage = Math.round(Math.random() * dice20.getRandomNumber());
 	if (hitDamage < 12){ 
 				hitDamage = 12;
@@ -285,6 +283,17 @@ function CPUAttack(){
     }
     }
     loseHealth(player1, damage);
+}
+function playAgain(input){
+    input = input.toLowerCase().replace(/\s+/g, '')
+    if(input.indexOf("playagain") > -1){
+        if(input == "play again" || input == "play"){
+            $("<p>You've choosen to try again.  Good for you.  Do better this time, okay?</p>").insertBefore("#placeholder").fadeIn(1000);
+			selectCharacter();
+        } else{
+            missedAttack();
+        }
+    }
 }
 
 
