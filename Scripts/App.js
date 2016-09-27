@@ -23,6 +23,7 @@ $(document).ready(function() {
             }
         }
         else if(characterSelect == false && isInBattle == false){
+            
             selectCharacter(input);
             battle();
         }
@@ -77,6 +78,8 @@ if(input.indexOf("cowboy") > -1 && characterSelect == false){
                characterSelect = true;
            }
            }
+           printHealth.call(player1, "You have ", "health.");
+           printGold.call(player1, "You have ", "gold.");
 }
 
 function battle(){
@@ -134,6 +137,13 @@ Dice.prototype.getRandomNumber = function(){
 function Person(){
     this.health = 100;
     this.gold = 0;
+}
+
+function printHealth(title, suffix){
+    console.log(title, this.health, suffix)
+}
+function printGold(title, suffix){
+    console.log(title, this.gold, suffix)
 }
 
 Person.prototype.getHealth = function(){
