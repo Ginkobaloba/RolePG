@@ -6,7 +6,6 @@
     <script src="scripts/jquery.js" type="text/javascript"></script>
     <script src="scripts/App.js" type="text/javascript"></script>
     <script type="text/javascript" src="http://code.jquery.com/jquery-1.7.1.min.js"></script>
-    <!-- Latest compiled and minified CSS -->
     <link href="https://fonts.googleapis.com/css?family=Raleway:400,300,600,800,900" rel="stylesheet" type="text/css">
     <link crossorigin="anonymous" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" rel="stylesheet">
     <link href="scripts/styles.css" rel="stylesheet" type="text/css">
@@ -16,9 +15,69 @@
 </head>
 
 <body>
-    <div class="row" id="container">
-        <div class="col-md-12 col-centered">
-            <div class="col-md-3 sidebar" id="left_sidebar">
+    <div id="container">
+        <h1>Dungeon Royale</h1>
+        <div id="console">
+            <p id="message_begin">You awake to find yourself in a strange room. You're not sure where you are, when you are, or frankly what you are at this point.
+                <br> You have a conscience but apparently no phyical form.
+                <br>
+                <strong>Suddenly, you hear someone yell..."Prepare to fight!"</strong>
+                <br> The first thing you need need to do is decide on your fighter's form.
+                <br> You can be an alien, a ninja or a cowboy.
+                <br>
+            </p>
+            <div>
+                <h3 id="alien_choice">You have chosen to play as an
+                    Alien</h3>
+                <p id="alien_weapon">Playing as an alien, you have a Laserblaster as a weapon.
+                    <br> Since it's from out of this world, it is a powerful weapon. Depending on your aim.</p>
+            </div>
+            <div>
+                <h3 id="ninja_choice">You have chosen to play as a
+                    Ninja</h3>
+                <p id="ninja_weapon">Playing as a ninja, you have a Katana as a weapon.
+                    <br> Your katana can slice through nearly anything. It must, however, be weilded with some skill and accuracy.</p>
+            </div>
+            <div>
+                <h3 id="cowboy_choice">You have chosen to play as a
+                    Cowboy</h3>
+                <p id="cowboy_weapon">Playing as a cowboy, you have a Winchester as your weapon.
+                    <br> This is a lethal weapon in the right hands. But know that it's accuracy is highly dependent on your prowess.</p>
+                <div>
+                    <p id="get_normal">To get back to your "normal" self, You are going to have to fight and win some gold to pay to return to your own time and space.
+                        <br> And apparently your own body.
+                        <br>
+                        <br> Things you are going to need to know before you fight are:
+                    </p>
+                    <p id="message_help">There are three types of attacks you can do with your weapon.
+                        <br> Normal Attack -- Your attack is accurate.
+                        <br> Quick Attack -- Your attack is quick and more effective.
+                        <br> Heavy Attack -- Your attack is most effective and more deadly.
+                        <br>
+                        <br> <i>When you are ready to fight enter Normal Attack, Quick Attack or Heavy Attack. <br>The choice is yours.</i>
+                    </p>
+                </div>
+                <h3 id="time_to_fight">Time to Battle</h3>
+                <p id="itIsTime">It's time your first opponent is in the ring. Get ready to fight</p>
+                <p id="player_nAttack">You've choosen a normal attack. You attack and hit your target.</p>
+                <p id="player_qAttack">You've choosen a quick attack. You've attacked and hit your enemy. Damage has been done.
+                </p>
+                <p id="player_hAttack">You went with the heavy attack. You hit the enemy and have caused some real damage</p>
+                <p id="enemy_attack1">Your opponent has launched a normal attack. Be careful.</p>
+                <p id="enemy_attack2">Your opponent has launched a quick attack. Oooh, is that blood?</p>
+                <p id="enemy_attack3">Your opponent has launched a heavy attack. Ouch, that looks like it hurt</p>
+                <p id="earned_gold">You fought well enough to win some gold. Congratulations!</p>
+                <p id="still_alive"> You have survived for another day.</p>
+                <p id="dead"> You're skills were no good. You're dead.</p>
+            </div>
+            <div id="placeholder"></div>
+            <form onsubmit="return false">
+                <center>
+                    <input autofocus="autofocus" id="command_line" size="50" type="text">
+                </center>
+            </form>
+        </div>
+        <!--   <div class="col-md-3 sidebar" id="left_sidebar">
                 <h3>Left Sidebar</h3>
 				<div id="playercontainer">
 					<svg xmlns="http://www.w3.org/2000/svg" version="1.1" x="0px" y="0px" viewBox="0 0 100 100">
@@ -28,64 +87,6 @@
 				</div>
                 <p>testing</p>
             </div>
-            <div class="col-md-6" id="console">
-                <h1>Dungeon Royale</h1>
-                <p id = "message_begin">You awake to find yourself in a strange room. You're not sure where you are, when you are, or frankly what you are at this point.
-                    <br> You have a conscience but apparently no phyical form.<br>
-                <strong>Suddenly, you hear someone yell..."Prepare to fight!"</strong><br>
-                The first thing you need need to do is decide on your fighter's form.<br> You can be an alien, a ninja or a cowboy.</p>
-
-                <div>
-                    <h3 id="alien_choice">You have chosen to play as an
-                    Alien</h3>
-                    <p id="alien_weapon">Playing as an alien, you have a Laserblaster as a weapon.
-                        <br> Since it's from out of this world, it is a powerful weapon. Depending on your aim.</p>
-                </div>
-                <div>
-                    <h3 id="ninja_choice">You have chosen to play as a
-                    Ninja</h3>
-                    <p id="ninja_weapon">Playing as a ninja, you have a Katana as a weapon.
-                        <br> Your katana can slice through nearly anything. It must, however, be weilded with some skill and accuracy.</p>
-                </div>
-                <div>
-                    <h3 id="cowboy_choice">You have chosen to play as a
-                    Cowboy</h3>
-                    <p id="cowboy_weapon">Playing as a cowboy, you have a Winchester as your weapon.
-                        <br> This is a lethal weapon in the right hands. But know that it's accuracy is highly dependent on your prowess.</p>
-                    <div>
-                        <p id="get_normal">To get back to your "normal" self, You are going to have to fight and win some gold to pay to return to your own time and space.
-                            <br> And apparently your own body.
-                            <br>
-                            <br> Things you are going to need to know before you fight are:
-                        </p>
-                        
-                        <p id = "message_help">There are three types of attacks you can do with your weapon.
-                            <br> Normal Attack -- Your attack is accurate.
-                            <br> Quick Attacks -- Your attack is quick and more effective.
-                            <br> Heavy Attacks -- Your attack is most effective and more deadly.
-                        </p>
-                    </div>
-                    <h3 id="time_to_fight">Time to Battle</h3>
-                    <p id="itIsTime">It's time your first opponent is in the ring. Get ready to fight</p>
-                    <p id="player_nAttack">You've choosen a normal attack. You attack and hit your target.</p>
-                    <p id="player_qAttack">You've choosen a quick attack. You've attacked and hit your enemy. Damage has been done.
-                    </p>
-                    <p id="player_hAttack">You went with the heavy attack. You hit the enemy and have caused some real damage</p>
-                    <p id="enemy_attack1">Your opponent has launched a normal attack. Be careful.</p>
-                    <p id="enemy_attack2">Your opponent has launched a quick attack. Oooh, is that blood?</p>
-                    <p id="enemy_attack3">Your opponent has launched a heavy attack. Ouch, that looks like it hurt</p>
-					
-					<p id = "earned_gold">You fought well enough to win some gold.  Congratulations!</p>
-					<p id= "still_alive"> You have survived for another day.</p>
-					<p id= "dead"> You're skills were no good.  You're dead.</p>
-
-                </div>
-				<div id="placeholder"></div>
-            <form onsubmit="return false">
-	            <center><input autofocus="autofocus" id="command_line" size="50" type="text"></center>
-            </form>
-            </div>
-        </div>
         <div class="col-md-3 sidebar" id="right_sidebar">
             <h3>Right Sidebar</h3>
             <p>testing</p>
@@ -96,16 +97,15 @@
                   <path id="enemyheart-path" fill-opacity="0" stroke-width="3" stroke="#ED6A5A" d="M81.495,13.923c-11.368-5.261-26.234-0.311-31.489,11.032C44.74,13.612,29.879,8.657,18.511,13.923  C6.402,19.539,0.613,33.883,10.175,50.804c6.792,12.04,18.826,21.111,39.831,37.379c20.993-16.268,33.033-25.344,39.819-37.379  C99.387,33.883,93.598,19.539,81.495,13.923z"/>
 				</svg>
 			</div>
-        </div>
- 
-    <footer class="row" id="footer">
-        <div class="col-md-12 col-centered">
-            <p>Enter 'help' at any time for a list of commands that you can use.
-            </p>
-        </div>
-    </footer>
-    <script src="scripts/App.js">
-    </script>
+        </div> -->
+        <footer id="footer">
+            <div class="col-md-12 col-centered">
+                <p>Enter 'help' at any time for a list of commands that you can use.
+                </p>
+            </div>
+        </footer>
+        <script src="scripts/App.js">
+        </script>
 </body>
 
 </html>

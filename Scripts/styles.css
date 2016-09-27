@@ -10,6 +10,10 @@ body {
     float: none;
     margin: 0 auto;
 }
+.h1, h1 {
+    font-size: 36px;
+    margin-left: 60px;
+}
 .row{
 	margin-left:0;
 	margin-right:0;
@@ -22,10 +26,12 @@ body {
     size: 50px;
 }
 #console {
-    background-color: black;
-    /*color: red;*/
-    margin-left:25%;
+    background-color:black; 
+    height: 400px; 
+    width: 800px; 
+    margin: auto;
     overflow: auto;
+    color: white;
 }
 
 #console p {
@@ -52,9 +58,8 @@ input:focus {
     outline: none;
 }
 
-
 /* === Left/Right Sidebar === */
-#enemycontainer {
+/*#enemycontainer {
     float: left;
     height: 200px;
     margin: 20px;
@@ -78,11 +83,12 @@ input:focus {
 }
 .sidebar {
 	color:#696969;
-}
+}*/
 
 /*===Footer===*/
 #footer{
 	bottom:0;
 	color: #696969;
 	position: fixed;
+	margin: 20px 10px;
 }
