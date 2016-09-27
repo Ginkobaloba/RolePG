@@ -145,7 +145,7 @@ function endOfBattle(){
     gainHealth();
     isInBattle = false;
     enemy.health = 100;
-    $("#earned_gold").clone().insertBefore(#placeholder).fadeIn(1000);
+    $("#earned_gold").clone().insertBefore("#placeholder").fadeIn(1000);
     $("<p>Press 'Enter' to start new battle.</p>").insertBefore("#placeholder").fadeIn(1000);
 }
 function newBattle(){
