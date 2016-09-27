@@ -1,87 +1,78 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
-	<meta charset="utf-8">
-	<script type="text/javascript" src="scripts/App.js"></script>
-	<script type="text/javascript" src="scripts/jquery.js"></script>
-	<link rel="stylesheet" type="text/css" href="scripts/styles.css">
-	<title>devCodeCamp &middot;RPG</title>
-	<script src="app.js"></script>
-	<meta name="description" content="Dungeon Royale RPG">
-	<meta name="keywords" content="Dungeon Royale,RPG">
+    <meta charset="utf-8">
+    <script type="text/javascript" src="scripts/jquery.js"></script>
+    <!-- Latest compiled and minified CSS -->
+    <link href="https://fonts.googleapis.com/css?family=Raleway:400,300,600,800,900" rel="stylesheet" type="text/css">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+    <link rel="stylesheet" type="text/css" href="scripts/styles.css">
+    <title>devCodeCamp &middot;RPG</title>
+    <meta name="description" content="Dungeon Royale RPG">
+    <meta name="keywords" content="Dungeon Royale,RPG">
 </head>
 
 <body>
-    <h1>Dungeon Royale</h1>
-
-    <div id="console">
-    <p>You awake to find yourself in a strange room.  You're not sure where you are or frankly what you are at this point.<br>
-	You have a conscience but apparently no phyical form.</p>
-	<h3>Suddenly, you hear someone yell..."Prepare to fight!"</h3>
-	
-    <p>Enter 'help' at any time for a list of commands that you can use.</p>
-	<p>The first thing you need need to do is decide on your fighter's form.</p>
-    <p>Do you want to play as a ninja, cowboy or alien?</p>
-    
-	<div>
-	<h3>You have chosen to play as an Alien</h3>
-	<p>Playing as an alien, you have a Laserblaster as a weapon.<br>
-	Since it's from out of this world, it is a powerful weapon. Depending on your aim.</p>
-	</div>
-	<div>
-	<h3>You have chosen to play as a Ninja</h3>
-	<p>Playing as a ninja, you have a Katana as a weapon.<br>
-	Your katana can slice through nearly anything. It must, however, be weilded with some skill and accuracy.</p>
-	</div>
-	<div>
-	<h3>You have chosen to play as a Cowboy</h3>
-	<p>Playing as a cowboy, you have a Winchester as your weapon.<br>
-	This is a lethal weapon in the right hands. But know that it's accuracy is highly dependent on your prowess.</p>
-	</div>
-	<div>
-	
-	<div> 
-	<button type = "button" id = "nAttack"> Normal Attack</button>
-	<button type = "button" id = "qAttack"> Quick Attack</button>
-	<button type = "button" id = "hAttack"> Heavy Attack</button>
-	
-	</div>
-
-	
-	
-	
-	
-	
-	</div>
-    <!-- <p id="message_help">Help &amp; Directions for game</p> -->
-    <form onsubmit="return false">
-    <input type="text" id="submit" size="50" autofocus="autofocus" style="display:inline-block>
-
-
-
-	    <!-- <p id="message_help">Help &amp; Directions for game</p> -->
-
-
-	<!-- <div id="playercontainer">
-		<svg xmlns="http://www.w3.org/2000/svg" version="1.1" x="0px" y="0px" viewBox="0 0 100 100">
-		     <path fill-opacity="0" stroke-width="1" stroke="#bbb" d="M81.495,13.923c-11.368-5.261-26.234-0.311-31.489,11.032C44.74,13.612,29.879,8.657,18.511,13.923  C6.402,19.539,0.613,33.883,10.175,50.804c6.792,12.04,18.826,21.111,39.831,37.379c20.993-16.268,33.033-25.344,39.819-37.379  C99.387,33.883,93.598,19.539,81.495,13.923z"/>
-		     <path id="player-path" fill-opacity="0" stroke-width="3" stroke="#ED6A5A " d="M81.495,13.923c-11.368-5.261-26.234-0.311-31.489,11.032C44.74,13.612,29.879,8.657,18.511,13.923  C6.402,19.539,0.613,33.883,10.175,50.804c6.792,12.04,18.826,21.111,39.831,37.379c20.993-16.268,33.033-25.344,39.819-37.379  C99.387,33.883,93.598,19.539,81.495,13.923z"/>
-		</svg>
-	</div>
-	<div id="enemycontainer">
- 		<svg xmlns="http://www.w3.org/2000/svg" version="1.1" x="0px" y="0px" viewBox="0 0 100 100">
-            <path fill-opacity="0" stroke-width="1" stroke="#bbb" d="M81.495,13.923c-11.368-5.261-26.234-0.311-31.489,11.032C44.74,13.612,29.879,8.657,18.511,13.923  C6.402,19.539,0.613,33.883,10.175,50.804c6.792,12.04,18.826,21.111,39.831,37.379c20.993-16.268,33.033-25.344,39.819-37.379  C99.387,33.883,93.598,19.539,81.495,13.923z"/>
-            <path id="enemy-path" fill-opacity="0" stroke-width="3" stroke="#ED6A5A " d="M81.495,13.923c-11.368-5.261-26.234-0.311-31.489,11.032C44.74,13.612,29.879,8.657,18.511,13.923  C6.402,19.539,0.613,33.883,10.175,50.804c6.792,12.04,18.826,21.111,39.831,37.379c20.993-16.268,33.033-25.344,39.819-37.379  C99.387,33.883,93.598,19.539,81.495,13.923z"/>
-        </svg>
-	</div> -->
-
-
-	    <div id="footer">
-	    	<p>Enter 'help' at any time for a list of commands that you can use.</p>
+    <div class="row" id="container">
+    	<div class="col-md-12 col-centered">
+	        <div class="col-md-3 sidebar" id="left_sidebar">
+	            <h3>Left Sidebar</h3>
+	            <p>testing</p>
+	            <div id="playercontainer"></div>
+	            <!-- <svg xmlns="http://www.w3.org/2000/svg" version="1.1" x="0px" y="0px" viewBox="0 0 100 100">
+		     	<path fill-opacity="0" stroke-width="1" stroke="#bbb" d="M81.495,13.923c-11.368-5.261-26.234-0.311-31.489,11.032C44.74,13.612,29.879,8.657,18.511,13.923  C6.402,19.539,0.613,33.883,10.175,50.804c6.792,12.04,18.826,21.111,39.831,37.379c20.993-16.268,33.033-25.344,39.819-37.379  C99.387,33.883,93.598,19.539,81.495,13.923z"/>
+		     	<path id="player-path" fill-opacity="0" stroke-width="3" stroke="#ED6A5A " d="M81.495,13.923c-11.368-5.261-26.234-0.311-31.489,11.032C44.74,13.612,29.879,8.657,18.511,13.923  C6.402,19.539,0.613,33.883,10.175,50.804c6.792,12.04,18.826,21.111,39.831,37.379c20.993-16.268,33.033-25.344,39.819-37.379  C99.387,33.883,93.598,19.539,81.495,13.923z"/>
+				</svg> -->
+	        </div>
+	        <div class="col-md-6" id="console">
+	            <h1>Dungeon Royale</h1>
+	            <p>You awake to find yourself in a strange room. You're not sure where you are or frankly what you are at this point.
+	                <br> You have a conscience but apparently no phyical form.</p>
+	            <h3>Suddenly, you hear someone yell..."Prepare to fight!"</h3>
+	            <p>The first thing you need need to do is decide on your fighter's form.</p>
+	            <p>Do you want to play as a ninja, cowboy or alien?</p>
+	            <div>
+	                <h3>You have chosen to play as an Alien</h3>
+	                <p>Playing as an alien, you have a Laserblaster as a weapon.
+	                    <br> Since it's from out of this world, it is a powerful weapon. Depending on your aim.</p>
+	            </div>
+	            <div>
+	                <h3>You have chosen to play as a Ninja</h3>
+	                <p>Playing as a ninja, you have a Katana as a weapon.
+	                    <br> Your katana can slice through nearly anything. It must, however, be weilded with some skill and accuracy.</p>
+	            </div>
+	            <div>
+	                <h3>You have chosen to play as a Cowboy</h3>
+	                <p>Playing as a cowboy, you have a Winchester as your weapon.
+	                    <br> This is a lethal weapon in the right hands. But know that it's accuracy is highly dependent on your prowess.</p>
+	            </div>
+	            <form onsubmit="return false">
+	                <input type="text" id="submit" autofocus="autofocus">
+	            </form>
+	        </div>
+	        <div class="col-md-3 sidebar" id="right_sidebar">
+	            <h3>Right Sidebar</h3>
+	            <p>testing</p>
+	            <div id="enemycontainer">
+	            </div>
+	            <!-- <svg xmlns="http://www.w3.org/2000/svg" version="1.1" x="0px" y="0px" viewBox="0 0 100 100">
+		            <path fill-opacity="0" stroke-width="1" stroke="#bbb" d="M81.495,13.923c-11.368-5.261-26.234-0.311-31.489,11.032C44.74,13.612,29.879,8.657,18.511,13.923  C6.402,19.539,0.613,33.883,10.175,50.804c6.792,12.04,18.826,21.111,39.831,37.379c20.993-16.268,33.033-25.344,39.819-37.379  C99.387,33.883,93.598,19.539,81.495,13.923z"/>
+		            <path id="enemy-path" fill-opacity="0" stroke-width="3" stroke="#ED6A5A " d="M81.495,13.923c-11.368-5.261-26.234-0.311-31.489,11.032C44.74,13.612,29.879,8.657,18.511,13.923  C6.402,19.539,0.613,33.883,10.175,50.804c6.792,12.04,18.826,21.111,39.831,37.379c20.993-16.268,33.033-25.344,39.819-37.379  C99.387,33.883,93.598,19.539,81.495,13.923z"/>
+		        </svg>
+		        <p class="sidebarInfo">Enemy Health</p> -->
+	        </div>
 	    </div>
+    </div>
 
-		<script src="app.js"></script>
-	</div>
+    <footer class="row" id="footer">
+	    <div class="col-md-12 col-centered">
+	    	
+	        <p>Enter 'help' at any time for a list of commands that you can use.</p>
+	    </div>
+    </footer>
 </body>
+
+    <script src="scripts/App.js"></script>
 
 </html>
