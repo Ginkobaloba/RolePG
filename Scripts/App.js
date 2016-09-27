@@ -27,12 +27,12 @@ $(document).ready(function() {
             selectCharacter(input);
             firstBattle();
         }
+        else if(isInBattle == false && characterSelect == true){
+            newBattle();
+        }
         else if(player1.health <= 0 || enemy.health <= 0){
             if(player1.health > 0){
-                player1.gold = player1.gold + enemy.gold;
-                displayPlayerGold();
-                gainHealth();
-                isInBattle = false;
+                endOfBattle();
             }else if(enemy.health > 0){
                 $("#dead").clone().insertBefore("#placeholder").fadeIn(1000);
                 finalGold();
@@ -43,9 +43,6 @@ $(document).ready(function() {
             if(input != ""){
             playerAttack(input);
             }
-        }
-        else if(isInBattle = false && characterSelect == true){
-            newBattle();
         }
         else if (input != "") {
             $('<p>I don\'t understand "' + input + '"</p>').insertBefore("#placeholder").fadeIn(1000);
@@ -102,6 +99,14 @@ function firstBattle(){
     isInBattle = true;
 }
 
+function endOfBattle(){
+    player1.gold = player1.gold + enemy.gold;
+    displayPlayerGold();
+    gainHealth();
+    isInBattle = false;
+    enemy.health = 100;
+    $("Press 'Enter' to start new battle.").insertBefore("#placeholder").fadeIn(1000);
+}
 function newBattle(){
     $("#time_to_fight").clone().insertBefore("#placeholder").fadeIn(1000);
     $("#new_fight").clone().insertBefore("#placeholder").fadeIn(1000);
