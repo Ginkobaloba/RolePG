@@ -11,64 +11,20 @@ $(document).ready(function() {
 				$("#message_help").clone().insertBefore("#placeholder").fadeIn(1000);
 			}
 		}
-var bar = new ProgressBar.SemiCircle(playercontainer, {
- strokeWidth: 6,
- color: '#FFEA82 ',
- trailColor: '#eee',
- trailWidth: 1,
- easing: 'easeInOut',
- duration: 1400,
- svgStyle: null,
- text: {
-   value: '',
-   alignToBottom: false
- },
- from: {color: '#FFEA82 '},
- to: {color: '#ED6A5A '},
- // Set default step function for all animate calls
- step: (state, bar) => {
-   bar.path.setAttribute('stroke', state.color);
-   var value = Math.round(bar.value() * 100);
-   if (value === 0) {
-     bar.setText('Dead');
-   } else {
-     bar.setText("Player");
-   }
+		else if(input.indexOf("cowboy") > -1){
+        	if(input == "cowboy"){
+        		$("#cowboy_choice").clone().insertBefore("#placeholder").fadeIn(1000);}
+}else if(input.indexOf("ninja") > -1){
+        	if(input == "ninja"){
+        		$("#ninja_choice").clone().insertBefore("#placeholder").fadeIn(1000)}}
+ else if (input != "") {
+			$('<p>I don\'t understand "' + input + '"</p>').insertBefore("#placeholder").fadeIn(1000);
+		}
+		$("#console").scrollTop($("#console")[0].scrollHeight);
+$("#command_line").val("");
 
-   bar.text.style.color = state.color;
- }
 });
-bar.text.style.fontFamily = '"Raleway", Helvetica, sans-serif';
-bar.text.style.fontSize = '2rem';
 
-bar.animate(0);  // Number from 0.0 to 1.
-
-var bar = new ProgressBar.SemiCircle(enemycontainer, {
- strokeWidth: 6,
- color: '#FFEA82 ',
- trailColor: '#eee',
- trailWidth: 1,
- easing: 'easeInOut',
- duration: 1400,
- svgStyle: null,
- text: {
-   value: '',
-   alignToBottom: false
- },
- from: {color: '#FFEA82 '},
- to: {color: '#ED6A5A '},
- // Set default step function for all animate calls
- step: (state, bar) => {
-   bar.path.setAttribute('stroke', state.color);
-   var value = Math.round(bar.value() * 100);
-   if (value === 0) {
-     bar.setText('Dead');
-   } else {
-     bar.setText("Enemy");
-   }
-
-   bar.text.style.color = state.color;
- }
 });
 bar.text.style.fontFamily = '"Raleway", Helvetica, sans-serif';
 bar.text.style.fontSize = '2rem';
@@ -178,5 +134,3 @@ function CPUAttack(){
 	else{return heavyAttack()};
 }
 
-$("#main_content").scrollTop($("#main_content")[0].scrollHeight);
-$("#command_line").val("");
