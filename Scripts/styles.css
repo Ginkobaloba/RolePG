@@ -1,62 +1,86 @@
-#sidebar {
-    position:absolute;
-    top:0; bottom:0; left:0;
-    width:50px;
-    background:#d9d9d9;
-}
-#playercontainer {
- margin: 20px;
- width: 200px;
- float: left;
- height: 200px;
-}
-#enemycontainer {
- margin: 20px;
- width: 200px;
- float: right;
- height: 200px;
-}
 body {
-	background-color: black;	
+    background-color: black;
+    color: white;
+    font-family: "Raleway", "HelveticaNeue-Light", "Helvetica Neue Light", "Helvetica Neue", Helvetica, Arial, "Lucida Grande", sans-serif; 
 }
-
+.row{
+	margin-left:0;
+	margin-right:0;
+}
 #container {
-	color: white;
-	position: absolute;
-	top: 50%;
-	left: 50%;
-	margin-top: -200px;
-	margin-left: -400px;
 }
 
+.col-centered{
+    float: none;
+    margin: 0 auto;
+}
+
+
+/* === Main console === */
 #console {
-	background-color:black; 
-	height: 400px; 
-	width: 800px; 
-	margin: 0 auto;
-	overflow: auto;
-	color: white;
+    background-color: black;
+    /*color: red;*/
+    margin-left:25%;
+    overflow: auto;
 }
 
 #console p {
-	color: white;
-	display: none;
-	font-size: 17px;
-	font-family: "Times New Roman", Times, serif;
+    display: none;
+    color: #9c9c9c;
+    font-size: 17px;
 }
 
 #command_line {
-	display: none;
+    display: none;
 }
 
+/* === Form === */
 input {
-	background-color: black;
-	color: white;
-	border: 1px solid #333;
-	font-family: "Times New Roman", Times, serif;
-	font-size: 17px;
+    background-color: black;
+    border: 1px solid #333;
+    display: inline-block;
+    font-size: 17px;
+   	width: 100%;
 }
 
 input:focus {
-	outline: none;
+    outline: none;
+}
+
+
+/* === Left/Right Sidebar === */
+.sidebar {
+	color:#696969;
+}
+
+#left_sidebar{
+	position: fixed;
+	left:0;
+}
+
+#right_sidebar{
+	position: fixed;
+	right: 0;
+}
+
+#playercontainer {
+    margin: 20px;
+    width: 200px;
+    float: left;
+    height: 200px;
+}
+
+#enemycontainer {
+    margin: 20px;
+    width: 200px;
+    float: right;
+    height: 200px;
+}
+
+
+/*===Footer===*/
+#footer{
+	position: fixed;
+	color: #696969;
+	bottom:0;
 }
