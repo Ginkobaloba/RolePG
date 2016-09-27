@@ -31,7 +31,10 @@ $(document).ready(function() {
             newBattle();
         }
         else if(player1.health <= 0 || enemy.health <= 0){
-            if(player1.health > 0){
+            if(player1.health <= 0 && enemy.health <= 0){
+                draw();
+            }
+            else if(player1.health > 0){
                 endOfBattle();
             }else if(enemy.health > 0){
                 $("#dead").clone().insertBefore("#placeholder").fadeIn(1000);
@@ -142,6 +145,7 @@ function endOfBattle(){
     gainHealth();
     isInBattle = false;
     enemy.health = 100;
+    $("#earned_gold").clone().insertBefore(#placeholder).fadeIn(1000);
     $("<p>Press 'Enter' to start new battle.</p>").insertBefore("#placeholder").fadeIn(1000);
 }
 function newBattle(){
@@ -150,7 +154,10 @@ function newBattle(){
     isInBattle = true;
 }
 
-
+function draw(){
+    $("#draw").clone().insertBefore("#placeholder").fadeIn(1000)
+    $("#dead").clone().insertBefore("#placeholder").fadeIn(1000);
+}
 function Dice(dice){
     this.dice = dice;
 }
