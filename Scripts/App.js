@@ -25,7 +25,7 @@ $(document).ready(function() {
         else if(characterSelect == false && isInBattle == false){
             enemy.gold = goldAmount();
             selectCharacter(input);
-            battle();
+            firstBattle();
         }
         else if(player1.health <= 0 || enemy.health <= 0){
             if(player1.health > 0){
@@ -43,6 +43,9 @@ $(document).ready(function() {
             if(input != ""){
             playerAttack(input);
             }
+        }
+        else if(isInBattle = false && characterSelect == true){
+            newBattle();
         }
         else if (input != "") {
             $('<p>I don\'t understand "' + input + '"</p>').insertBefore("#placeholder").fadeIn(1000);
@@ -92,13 +95,18 @@ if(input.indexOf("cowboy") > -1 && characterSelect == false){
            printGold.call(player1, "You have ", "gold.");
 }
 
-function battle(){
+function firstBattle(){
     $("#time_to_fight").clone().insertBefore("#placeholder").fadeIn(1000);
     $("#itIsTime").clone().insertBefore("#placeholder").fadeIn(1000);
     $("<p>Type 'help' for instructions</p>").insertBefore("#placeholder").fadeIn(1000);
     isInBattle = true;
 }
 
+function newBattle(){
+    $("#time_to_fight").clone().insertBefore("#placeholder").fadeIn(1000);
+    $("#new_fight").clone().insertBefore("#placeholder").fadeIn(1000);
+    isInBattle = true;
+}
 function playerAttack(input){
     var damage = 0;
     input = input.toLowerCase().replace(/\s+/g, '')
@@ -157,6 +165,7 @@ function printGold(title, suffix){
 }
 function gainHealth(){
     player1.health = player1.health + 50;
+    if(player1.health >= 100){player1.health = 100;}
     $("<p>You have gained 50 health for winning! <br>Your health is now: " + player1.getHealth() +  " </p>").insertBefore("#placeholder").fadeIn(1000);
 }
 Person.prototype.getHealth = function(){
