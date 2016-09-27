@@ -1,0 +1,29 @@
+{
+  "name": "rolepg",
+  "version": "1.0.0",
+  "description": "roleplaying game built in javascript",
+  "main": "app.js",
+  "dependencies": {
+    "jasmine": "^2.5.2",
+    "karma-jasmine": "^1.0.2",
+    "karma": "^1.3.0",
+    "progressbar.js": "^1.0.1"
+  },
+  "devDependencies": {},
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Ginkobaloba/RolePG.git"
+  },
+  "keywords": [
+    "rpg"
+  ],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/Ginkobaloba/RolePG/issues"
+  },
+  "homepage": "https://github.com/Ginkobaloba/RolePG#readme"
+}
