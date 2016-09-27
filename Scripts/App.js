@@ -57,8 +57,8 @@ $("#command_line").val("");
 function playerAttack(){
     var damage = 0;
     input = input.toLowerCase().replace(/\s+/g, '')
-    if(input.indexOf("normalattack") > -1){
-        if(input == "normalattack"){
+    if(input.indexOf("normal") > -1){
+        if(input == "normal" || input == "normalattack"){
             damage = normalAttack();
             if(damage != 0){
             $("<p>You've choosen a normal attack. You attack and hit your target for " + damage + " damage.</p>").insertBefore("#placeholder").fadeIn(1000);
@@ -66,8 +66,8 @@ function playerAttack(){
             missedAttack();
         }
     }
-    } else if(input.indexOf("quickattack") > -1){
-        if(input == "quickattack"){
+    } else if(input.indexOf("quick") > -1){
+        if(input == "quick"|| input == "quickattack"){
             damage = quickAttack();
             if(damage != 0){
 
@@ -76,8 +76,8 @@ function playerAttack(){
             missedAttack();
         }
     }
-    } else if(input.indexOf("heavyattack") > -1){
-      if(input == "heavyattack"){
+    } else if(input.indexOf("heavy") > -1){
+      if(input == "heavy"|| input == "heavyattack"){
             damage = heavyAttack();
             if(damage != 0){	
        $("<p>You went with the heavy attack. You hit the enemy and hit your target for " + damage + " and have caused some real damage.</p>").insertBefore("#placeholder").fadeIn(1000);
@@ -86,6 +86,7 @@ function playerAttack(){
         }
     }
     }
+	else{missedAttack()};
     loseHealth(enemy, damage);
     CPUAttack();
     displayPlayerHealth();
