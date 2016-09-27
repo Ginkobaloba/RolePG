@@ -3,10 +3,6 @@ body {
     color: white;
     font-family: "Raleway", "HelveticaNeue-Light", "Helvetica Neue Light", "Helvetica Neue", Helvetica, Arial, "Lucida Grande", sans-serif; 
 }
-.row{
-	margin-left:0;
-	margin-right:0;
-}
 #container {
 }
 
@@ -14,9 +10,17 @@ body {
     float: none;
     margin: 0 auto;
 }
+.row{
+	margin-left:0;
+	margin-right:0;
+}
 
 
 /* === Main console === */
+#command_line {
+    display: none;
+    size: 50px;
+}
 #console {
     background-color: black;
     /*color: red;*/
@@ -25,14 +29,11 @@ body {
 }
 
 #console p {
-    display: none;
     color: #9c9c9c;
+    display: none;
     font-size: 17px;
 }
 
-#command_line {
-    display: none;
-}
 
 /* === Form === */
 input {
@@ -49,13 +50,15 @@ input:focus {
 
 
 /* === Left/Right Sidebar === */
-.sidebar {
-	color:#696969;
+#enemycontainer {
+    float: left;
+    height: 200px;
+    margin: 20px;
+    width: 200px;
 }
-
 #left_sidebar{
-	position: fixed;
 	left:0;
+	position: fixed;
 }
 
 #right_sidebar{
@@ -64,23 +67,18 @@ input:focus {
 }
 
 #playercontainer {
-    margin: 20px;
-    width: 200px;
     float: left;
     height: 200px;
-}
-
-#enemycontainer {
     margin: 20px;
     width: 200px;
-    float: right;
-    height: 200px;
 }
-
+.sidebar {
+	color:#696969;
+}
 
 /*===Footer===*/
 #footer{
-	position: fixed;
-	color: #696969;
 	bottom:0;
+	color: #696969;
+	position: fixed;
 }
