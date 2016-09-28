@@ -195,6 +195,11 @@ Dice.prototype.getRandomNumber = function(){
 }
 
 
+
+function playercharacter(){
+	this.playername=""
+}
+
 function Person(){
     this.health = 100;
     this.gold = 0;
@@ -289,33 +294,46 @@ function takeDamage(playerHealth, hitDamage){
     if(playerHealth > 0){loseHealth(playerHealth,hitDamage);}
 }
 
-function CPUAttack(){
+function CPUAttack() {
     var hitDamage = Math.random() * 100;
-    if(hitDamage < 33){
+    if (hitDamage < 33) {
         var damage = quickAttack();
-         if(damage != 0){
-            $("<p>Your opponent has launched a quick attack and hit you for " + damage + " Oooh, is that blood?</p>").insertBefore("#placeholder").fadeIn(1000);
-        } else{
+        if (damage != 0) {
+            CpuQuotes();
+            $("<p>Your opponent has hit you for " + damage + " Oooh, is that blood?</p>").insertBefore("#placeholder").fadeIn(1000);
+        } else {
             enemyMissedAttack();
-    }
-}
-    else if(hitDamage < 66){
+        }
+    } else if (hitDamage < 66) {
         var damage = normalAttack();
-         if(damage != 0){
-            $("<p>Your opponent has launched a normal attack and hit you for " + damage + " Be careful.</p>").insertBefore("#placeholder").fadeIn(1000);
-        } else{
+        if (damage != 0) {
+            CpuQuotes();
+            $("<p>Your opponent has hit you for " + damage + " !</p>").insertBefore("#placeholder").fadeIn(1000);
+        } else {
             enemyMissedAttack();
-    }
-}
-    else{
+        }
+    } else {
         var damage = heavyAttack();
-         if(damage != 0){
-            $("<p>Your opponent has launched a heavy attack and hit you for " + damage + " Ouch, that looks like it hurt.</p>").insertBefore("#placeholder").fadeIn(1000);
-        } else{
+        if (damage != 0) {
+            CpuQuotes();
+            $("<p>Your opponent has hit you for " + damage + " Ouch, that looks like it hurt!</p>").insertBefore("#placeholder").fadeIn(1000);
+        } else {
             enemyMissedAttack();
-    }
+        }
     }
     loseHealth(player1, damage);
+}
+function CpuQuotes() {
+    var cpu = Math.round(Math.random() * 100)
+    if (cpu <= 33) {
+
+        $("<p>Your opponent comes running towards you with an axe in each hand ready to eat you alive! Swinging his hands around trying to see if he can gut you and throw your organs to the roaring crowd! You move from side to side trying to dodge the axes but your opponent managed to cut you!</p>").insertBefore("#placeholder").fadeIn(1000);
+    } else if (cpu <= 66) {
+        $("<p>Your opponent jumps into the dirt...<i>Where did he go?</i> You look to and from, side to side...then the grounds starts to shake and you can just see the rocks jumping up and down on the ground. Your opponent grabs your feet from underneath you and drags you underground then tosses you into the air and drop kicks you to the earth!</p>").insertBefore("#placeholder").fadeIn(1000);
+    } else {
+        $("<p>Your opponent jumps into the air, wings open wide! He's flying around and <i>a large gust of wind is being blown down on you!</i>Then a huge tornado dust is created and....<i>what is this???</i> within the tornado are sharp swords whooshing around and <b>SMACK! CRACK! CASSSHHEENG!</b> Everything comes at you and damages you!</p>").insertBefore("#placeholder").fadeIn(1000);
+    }
+
 }
 function playAgain(input){
     input = input.toLowerCase().replace(/\s+/g, '')
