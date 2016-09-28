@@ -24,6 +24,7 @@ body {
 #command_line {
     display: none;
     size: 50px;
+    font-color: white;
 }
 #console {
     background-color:black; 
@@ -52,6 +53,7 @@ input {
     display: inline-block;
     font-size: 17px;
    	width: 100%;
+    color: white;
 }
 
 input:focus {

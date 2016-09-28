@@ -56,7 +56,8 @@ function playerAttack(){
         if(input == "normal" || input == "normalattack"){
             damage = normalAttack();
             if(damage != 0){
-            $("<p>You've choosen a normal attack. You attack and hit your target for " + damage + " damage.</p>").insertBefore("#placeholder").fadeIn(1000);
+            quotes();
+            $("<p>You hit your target for " + damage + " damage.</p>").insertBefore("#placeholder").fadeIn(1000);
         } else{
             missedAttack();
         }
@@ -65,8 +66,8 @@ function playerAttack(){
         if(input == "quick"|| input == "quickattack"){
             damage = quickAttack();
             if(damage != 0){
-
-            $("<p>You've choosen a quick attack. You've attacked and hit your target for " + damage + " damage.</p>").insertBefore("#placeholder").fadeIn(1000);
+            quotes();
+            $("<p>You've hit your target for " + damage + " damage.</p>").insertBefore("#placeholder").fadeIn(1000);
         } else{
             missedAttack();
         }
@@ -75,7 +76,8 @@ function playerAttack(){
       if(input == "heavy"|| input == "heavyattack"){
             damage = heavyAttack();
             if(damage != 0){	
-       $("<p>You went with the heavy attack. You hit the enemy and hit your target for " + damage + " and have caused some real damage.</p>").insertBefore("#placeholder").fadeIn(1000);
+            quotes();
+       $("<p>You hit the enemy for " + damage + " damage.</p>").insertBefore("#placeholder").fadeIn(1000);
         } else{
             missedAttack();
         }
@@ -110,58 +112,53 @@ if(input.indexOf("cowboy") > -1 && characterSelect == false){
                $("#cowboy_choice").clone().insertBefore("#placeholder").fadeIn(1000)
                $("#cowboy_weapon").clone().insertBefore("#placeholder").fadeIn(1000);
                characterSelect = true;
+               player1.type = "cowboy";
            }
         }else if(input.indexOf("ninja") > -1 && characterSelect == false){
            if(input == "ninja"){
                $("#ninja_choice").clone().insertBefore("#placeholder").fadeIn(1000)
                $("#ninja_weapon").clone().insertBefore("#placeholder").fadeIn(1000)
                 characterSelect = true;
+                player1.type = "ninja";
             }
         }else if(input.indexOf("alien") > -1 && characterSelect == false){
             if(input == "alien"){
                $("#alien_choice").clone().insertBefore("#placeholder").fadeIn(1000)
                $("#alien_weapon").clone().insertBefore("#placeholder").fadeIn(1000);
                characterSelect = true;
+               player1.type = "alien";
            }
            }
            printHealth.call(player1, "You have ", "health.");
            printGold.call(player1, "You have ", "gold.");
 }
-        function ninjaQuotes() {
-            if (player.type == "ninja") {
-                var player = Math.round(Math.random * 100)
-            }
-            if (player <= 33) {
-                $("<p>Ninja moves fan of knives comes into play! 'swish swooosh' You can just hear the knives cutting through the air!'swish swoosh'</p>").insertBefore("#placeholder").fadeIn(1000);
-            } else if (player <= 66) {
-                $("<p>You dash towards your enemy dealing damage as you run around him striking him with a knife that was thrown from the crowd. Unfortunately, the blade breaks from a couple stikes but you got some good cuts in your enemy.</p>").insertBefore("#placeholder").fadeIn(1000);
-            } else {
-                $("<p>'身を捨てても、名利は捨てず' (Even if I sacrifice my body, I will never sacrifice my honor). WHAT IS THIS! The katana is being unsheathed! Will this end the game?!?! Killing strikes are being slashed about the enemy! </p>").insertBefore("#placeholder").fadeIn(1000);
-            }
-        }
-        function cowboyQuotes() {
-            if (player.type == "cowboy") {
-                var player = Math.round(Math.random * 100)
-            }
-            if (player <= 33) {
-                $("<p>You summon a fleet of horses from the dirt surrounding you and command them to charge at your opponent. One by one as they hit your opponent, they turn back to the dirt from which they came. Your opponent gets cut by the swift kicks your horses and he gets dirt in his eyes!</p>").insertBefore("#placeholder").fadeIn(1000);
-            } else if (player <= 66) {
+        function quotes() {
+            var player = Math.round(Math.random() * 100)
+            if (player1.type == "ninja") {           
+                if (player <= 33) {
+                    $("<p>Ninja moves fan of knives comes into play! 'swish swooosh' You can just hear the knives cutting through the air!'swish swoosh'</p>").insertBefore("#placeholder").fadeIn(1000);
+                } else if (player <= 66) {
+                    $("<p>You dash towards your enemy dealing damage as you run around him striking him with a knife that was thrown from the crowd. Unfortunately, the blade breaks from a couple stikes but you got some good cuts in your enemy.</p>").insertBefore("#placeholder").fadeIn(1000);
+                } else {
+                    $("<p>'身を捨てても、名利は捨てず' (Even if I sacrifice my body, I will never sacrifice my honor). WHAT IS THIS! The katana is being unsheathed! Will this end the game?!?! Killing strikes are being slashed about the enemy! </p>").insertBefore("#placeholder").fadeIn(1000);
+                }
+            }else if (player1.type == "cowboy") {        
+                if (player <= 33) {
+                    $("<p>You summon a fleet of horses from the dirt surrounding you and command them to charge at your opponent. One by one as they hit your opponent, they turn back to the dirt from which they came. Your opponent gets cut by the swift kicks your horses and he gets dirt in his eyes!</p>").insertBefore("#placeholder").fadeIn(1000);
+                } else if (player <= 66) {
                 $("<p>You teleport behind your opponent and give him a swift kick knocking your opponent on his feet, then teleport to your opponents side and kicking him hard in the chest and making him fly into the air across the arena!</p>").insertBefore("#placeholder").fadeIn(1000);
-            } else {
-                $("<p>You sent out a lasso with a tipped kunai at the end at your opponent! The opponent is impaled in the chest with your weapon allowing you to pull your opponent through the air towards you! He flies towards your fist as you say 'GET OVER HERE'!.</p>").insertBefore("#placeholder").fadeIn(1000);
-            }
-        }
-        function alienQuotes() {
-            if (player.type == "alien") {
-                var player = Math.round(Math.random * 100)
-            }
-            if (player <= 33) {
+                } else {
+                    $("<p>You sent out a lasso with a tipped kunai at the end at your opponent! The opponent is impaled in the chest with your weapon allowing you to pull your opponent through the air towards you! He flies towards your fist as you say 'GET OVER HERE'!.</p>").insertBefore("#placeholder").fadeIn(1000);
+                }
+            }else if (player.type == "alien") {           
+            if (player1 <= 33) {
                 $("<p><i>pew pew pew</i> You shoot your laserblaster at your opponent. <i>pew pew pew</i> Your opponent is trying to dodge your shots but was hit!</p>").insertBefore("#placeholder").fadeIn(1000);
             } else if (player <= 66) {
                 $("<p>To confuse your opponent, your made shadow clones of yourself. He will never know which one you are! All your clones run around to confuse him and while he's looking at your clone, you swiftly go in with your lightsabor and slash him! There was no way he could get away from you!</p>").insertBefore("#placeholder").fadeIn(1000);
             } else {
                 $("<p>You summoned bombs from the air to drop on your opponent creating craters around him. The bombs not only explode at his feet, but cover the ground where he stands and causing the dirt to fly around giving you chance to run in and slice him with your lightsabor!</p>").insertBefore("#placeholder").fadeIn(1000);
             }
+        }
         }
 function firstBattle(){
     $("#time_to_fight").clone().insertBefore("#placeholder").fadeIn(1000);
@@ -201,6 +198,7 @@ Dice.prototype.getRandomNumber = function(){
 function Person(){
     this.health = 100;
     this.gold = 0;
+    this.type = "";
 }
 
 function printHealth(title, suffix){
