@@ -150,8 +150,8 @@ if(input.indexOf("cowboy") > -1 && characterSelect == false){
                 } else {
                     $("<p>You sent out a lasso with a tipped kunai at the end at your opponent! The opponent is impaled in the chest with your weapon allowing you to pull your opponent through the air towards you! He flies towards your fist as you say 'GET OVER HERE'!.</p>").insertBefore("#placeholder").fadeIn(1000);
                 }
-            }else if (player.type == "alien") {           
-            if (player1 <= 33) {
+            }else if (player1.type == "alien") {           
+            if (player <= 33) {
                 $("<p><i>pew pew pew</i> You shoot your laserblaster at your opponent. <i>pew pew pew</i> Your opponent is trying to dodge your shots but was hit!</p>").insertBefore("#placeholder").fadeIn(1000);
             } else if (player <= 66) {
                 $("<p>To confuse your opponent, your made shadow clones of yourself. He will never know which one you are! All your clones run around to confuse him and while he's looking at your clone, you swiftly go in with your lightsabor and slash him! There was no way he could get away from you!</p>").insertBefore("#placeholder").fadeIn(1000);
